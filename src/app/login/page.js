@@ -4,13 +4,15 @@ import { Eye, HeartPulse } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
+import { useRouter } from "next/navigation";
+
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
+  const router = useRouter();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // TODO: Implement login logic
-    console.log("Login submitted");
+    router.push("/dashboard");
   };
 
   return (
