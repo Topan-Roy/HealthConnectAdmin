@@ -8,7 +8,8 @@ import {
   CalendarCheck, 
   CreditCard, 
   FileText, 
-  Settings 
+  Settings,
+  LogOut
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -53,6 +54,17 @@ export default function Sidebar() {
           );
         })}
       </nav>
+
+      {/* Logout Button */}
+      <div className="p-4 border-t border-[#163057]">
+        <Link 
+          href="/login"
+          className="flex items-center space-x-3 px-4 py-3 rounded-lg text-red-400 hover:bg-red-500/10 hover:text-red-300 transition-colors w-full"
+        >
+          <LogOut className="w-5 h-5" />
+          <span className="font-medium text-sm">Logout</span>
+        </Link>
+      </div>
     </aside>
   );
 }
