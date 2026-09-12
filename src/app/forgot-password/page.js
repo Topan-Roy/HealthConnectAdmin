@@ -3,11 +3,15 @@
 import { HeartPulse } from "lucide-react";
 import Link from "next/link";
 
+import { useRouter } from "next/navigation";
+
 export default function ForgotPasswordPage() {
+  const router = useRouter();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // TODO: Implement forgot password logic
-    console.log("Forgot password submitted");
+    // Redirecting to reset-password page for demonstration
+    router.push("/reset-password");
   };
 
   return (
@@ -48,14 +52,14 @@ export default function ForgotPasswordPage() {
                   id="email"
                   type="email"
                   placeholder="admin@healthconnect.com"
-                  className="w-full px-4 py-3 text-sm rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all placeholder:text-gray-400"
+                  className="w-full px-4 py-3 text-sm text-black rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all placeholder:text-gray-400"
                   required
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-[#1b64f2] hover:bg-blue-600 text-white font-medium py-3 rounded-lg transition-colors mt-6 text-sm shadow-lg shadow-blue-500/30"
+                className="w-full bg-[#1b64f2] hover:bg-blue-600 text-white font-medium py-3 rounded-lg transition-colors mt-6 text-sm shadow-lg shadow-blue-500/30 cursor-pointer"
               >
                 Reset Password
               </button>
