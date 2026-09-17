@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Search, MoreHorizontal, ChevronLeft, ChevronRight, X } from "lucide-react";
+import { Search, ChevronLeft, ChevronRight, X } from "lucide-react";
 
 export default function PatientsPage() {
   const [selectedPatient, setSelectedPatient] = useState(null);
@@ -27,7 +27,7 @@ export default function PatientsPage() {
 
   return (
     <div className="p-6">
-      <div className="flex justify-between items-center mb-6">
+      <div className="flex justify-between items-center mb-6 relative z-20">
         <h1 className="text-2xl font-bold text-gray-800">Patients</h1>
         
         <div className="flex items-center space-x-4">
@@ -46,8 +46,8 @@ export default function PatientsPage() {
         </div>
       </div>
 
-      <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-        <div className="overflow-x-auto">
+      <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-visible">
+        <div className="overflow-visible min-h-[300px]">
           <table className="w-full">
             <thead className="bg-gray-50 border-b border-gray-100">
               <tr>
@@ -72,17 +72,12 @@ export default function PatientsPage() {
                     </span>
                   </td>
                   <td className="py-4 px-6">
-                    <div className="flex items-center space-x-3">
-                      <button 
-                        onClick={() => handleViewPatient(patient)}
-                        className="text-blue-600 hover:text-blue-800 bg-blue-50 hover:bg-blue-100 px-3 py-1 rounded-md text-sm font-medium transition-colors inline-block"
-                      >
-                        View
-                      </button>
-                      <button className="text-gray-400 hover:text-gray-600">
-                        <MoreHorizontal className="w-5 h-5" />
-                      </button>
-                    </div>
+                    <button 
+                      onClick={() => handleViewPatient(patient)}
+                      className="text-blue-600 hover:text-blue-800 bg-blue-50 hover:bg-blue-100 px-3 py-1 rounded-md text-sm font-medium transition-colors inline-block relative z-20"
+                    >
+                      View
+                    </button>
                   </td>
                 </tr>
               ))}
