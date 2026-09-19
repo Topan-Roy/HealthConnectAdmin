@@ -99,9 +99,12 @@ export default function AppointmentsPage() {
                   </td>
                   <td className="py-4 px-6">
                     <div className="flex items-center gap-2">
-                      <button className="text-blue-600 hover:text-blue-800 bg-blue-50 hover:bg-blue-100 border border-blue-100 px-4 py-1.5 rounded-lg text-sm font-medium transition-colors cursor-pointer">
+                      <Link
+                        href={`/dashboard/appointments/${apt.id}`}
+                        className="text-blue-600 hover:text-blue-800 bg-blue-50 hover:bg-blue-100 border border-blue-100 px-4 py-1.5 rounded-lg text-sm font-medium transition-colors cursor-pointer"
+                      >
                         View
-                      </button>
+                      </Link>
                       <button className="text-gray-400 hover:text-gray-600 bg-gray-50 hover:bg-gray-100 border border-gray-200 p-1.5 rounded-lg transition-colors cursor-pointer">
                         <MoreHorizontal className="w-4 h-4" />
                       </button>
