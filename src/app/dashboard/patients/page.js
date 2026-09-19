@@ -2,10 +2,9 @@
 
 import { useState } from "react";
 import { Search, ChevronLeft, ChevronRight, X } from "lucide-react";
+import Link from "next/link";
 
 export default function PatientsPage() {
-  const [selectedPatient, setSelectedPatient] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const patients = [
     { id: 1, name: "Rahim Ahmed", email: "rahim@gmail.com", phone: "01712-345678", status: "Active", age: 45, address: "Dhaka, Bangladesh", bloodGroup: "O+" },
@@ -14,16 +13,6 @@ export default function PatientsPage() {
     { id: 4, name: "Ayesha Islam", email: "ayesha@gmail.com", phone: "01687-654321", status: "Active", age: 50, address: "Rajshahi, Bangladesh", bloodGroup: "AB+" },
     { id: 5, name: "Mahfuz Alam", email: "mahfuz@gmail.com", phone: "01911-223344", status: "Active", age: 38, address: "Khulna, Bangladesh", bloodGroup: "O-" },
   ];
-
-  const handleViewPatient = (patient) => {
-    setSelectedPatient(patient);
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setSelectedPatient(null);
-  };
 
   return (
     <div className="p-6">
@@ -72,12 +61,12 @@ export default function PatientsPage() {
                     </span>
                   </td>
                   <td className="py-4 px-6">
-                    <button
-                      onClick={() => handleViewPatient(patient)}
+                    <Link
+                      href={`/dashboard/patients/${patient.id}`}
                       className="text-blue-600 hover:text-blue-800 bg-blue-50 hover:bg-blue-100 px-3 py-1 rounded-md text-sm font-medium transition-colors inline-block relative z-20"
                     >
                       View
-                    </button>
+                    </Link>
                   </td>
                 </tr>
               ))}
@@ -105,81 +94,6 @@ export default function PatientsPage() {
         </div>
       </div>
 
-      {/* Patient Details Modal */}
-      {isModalOpen && selectedPatient && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center">
-          {/* Backdrop */}
-          <div
-            className="absolute inset-0 bg-black bg-opacity-40 backdrop-blur-sm transition-opacity"
-            onClick={closeModal}
-          ></div>
-
-          {/* Modal Content */}
-          <div className="relative bg-white rounded-xl shadow-2xl w-full max-w-lg mx-4 overflow-hidden animate-in fade-in zoom-in duration-200">
-            <div className="px-6 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50">
-              <h3 className="text-lg font-semibold text-gray-800">Patient Details</h3>
-              <button
-                onClick={closeModal}
-                className="text-gray-400 hover:text-gray-600 p-1 rounded-md hover:bg-gray-200 transition-colors"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-
-
-
-
-            <div className="p-6">
-              <div className="flex items-center space-x-4 mb-6">
-                <div className="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl font-bold">
-                  {selectedPatient.name.charAt(0)}
-                </div>
-                <div>
-                  <h4 className="text-xl font-bold text-gray-900">{selectedPatient.name}</h4>
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-700 mt-1">
-                    {selectedPatient.status}
-                  </span>
-                </div>
-              </div>
-
-              <div className="space-y-4">
-                <div className="grid grid-cols-3 gap-4 border-b border-gray-50 pb-4">
-                  <div className="col-span-1 text-sm text-gray-500 font-medium">Email</div>
-                  <div className="col-span-2 text-sm text-gray-800">{selectedPatient.email}</div>
-                </div>
-                <div className="grid grid-cols-3 gap-4 border-b border-gray-50 pb-4">
-                  <div className="col-span-1 text-sm text-gray-500 font-medium">Phone</div>
-                  <div className="col-span-2 text-sm text-gray-800">{selectedPatient.phone}</div>
-                </div>
-                <div className="grid grid-cols-3 gap-4 border-b border-gray-50 pb-4">
-                  <div className="col-span-1 text-sm text-gray-500 font-medium">Age</div>
-                  <div className="col-span-2 text-sm text-gray-800">{selectedPatient.age} years</div>
-                </div>
-                <div className="grid grid-cols-3 gap-4 border-b border-gray-50 pb-4">
-                  <div className="col-span-1 text-sm text-gray-500 font-medium">Blood Group</div>
-                  <div className="col-span-2 text-sm text-gray-800">{selectedPatient.bloodGroup}</div>
-                </div>
-                <div className="grid grid-cols-3 gap-4 pb-2">
-                  <div className="col-span-1 text-sm text-gray-500 font-medium">Address</div>
-                  <div className="col-span-2 text-sm text-gray-800">{selectedPatient.address}</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="px-6 py-4 border-t border-gray-100 bg-gray-50 flex justify-end space-x-3">
-              <button
-                onClick={closeModal}
-                className="px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-200 bg-gray-100 rounded-lg transition-colors"
-              >
-                Close
-              </button>
-              <button className="px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors">
-                Edit Patient
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
