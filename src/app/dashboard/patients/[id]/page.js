@@ -71,11 +71,17 @@ export default function PatientDetailsPage() {
           </div>
           
           <div className="flex items-center gap-3">
-            <button className="flex items-center gap-2 px-4 py-2 bg-white border border-blue-200 text-blue-600 rounded-lg hover:bg-blue-50 font-medium transition-colors shadow-sm">
+            <button 
+              onClick={() => alert(`Edit functionality for ${patient.name} will be implemented here.`)}
+              className="flex items-center gap-2 px-4 py-2 bg-white border border-blue-200 text-blue-600 rounded-lg hover:bg-blue-50 font-medium transition-colors shadow-sm cursor-pointer"
+            >
               <Edit className="w-4 h-4" />
               Edit
             </button>
-            <button className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-medium transition-colors shadow-sm shadow-blue-200">
+            <button 
+              onClick={() => alert(`Messaging ${patient.name}...`)}
+              className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-medium transition-colors shadow-sm shadow-blue-200 cursor-pointer"
+            >
               <MessageSquare className="w-4 h-4" />
               Message
             </button>
@@ -90,7 +96,7 @@ export default function PatientDetailsPage() {
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`py-4 px-1 border-b-2 font-medium text-sm transition-colors ${
+              className={`py-4 px-1 border-b-2 font-medium text-sm transition-colors cursor-pointer ${
                 activeTab === tab
                   ? "border-blue-600 text-blue-700"
                   : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
