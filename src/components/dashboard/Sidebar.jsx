@@ -19,7 +19,8 @@ import {
   ShieldCheck,
   Settings,
   LogOut,
-  User
+  User,
+  Bot
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -57,6 +58,7 @@ const sidebarGroups = [
   {
     label: "Management",
     items: [
+      { name: "AI Assistant", href: "/dashboard/ai", icon: Bot },
       { name: "Reports & Analytics", href: "/dashboard/reports", icon: BarChart3 },
       { name: "Notifications", href: "/dashboard/notifications", icon: Bell },
       { name: "Support / Help Desk", href: "/dashboard/support", icon: Headphones },
