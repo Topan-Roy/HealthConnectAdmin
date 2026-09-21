@@ -12,6 +12,9 @@ export default function AdminsPage() {
     { id: 4, name: "Karim Admin", email: "karim@healthconnect.com", role: "Support Manager", status: "Active" },
   ];
 
+
+
+
   return (
     <div className="p-6 max-w-7xl mx-auto">
       <div className="flex justify-between items-center mb-6 relative z-20">
@@ -54,9 +57,8 @@ export default function AdminsPage() {
                   <td className="py-4 px-6 text-sm text-gray-500">{admin.email}</td>
                   <td className="py-4 px-6 text-sm text-gray-600">{admin.role}</td>
                   <td className="py-4 px-6">
-                    <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium ${
-                      admin.status === "Active" ? "bg-green-50 text-green-600 border border-green-100" : "bg-red-50 text-red-600 border border-red-100"
-                    }`}>
+                    <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium ${admin.status === "Active" ? "bg-green-50 text-green-600 border border-green-100" : "bg-red-50 text-red-600 border border-red-100"
+                      }`}>
                       {admin.status}
                     </span>
                   </td>
