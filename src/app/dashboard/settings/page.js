@@ -3,6 +3,9 @@
 import { useState } from "react";
 import { User, Lock, Bell, Globe, Save, ShieldCheck, Mail, Smartphone, Monitor } from "lucide-react";
 
+
+
+
 export default function SettingsPage() {
   const [activeTab, setActiveTab] = useState("general");
   const [isSaving, setIsSaving] = useState(false);
@@ -36,11 +39,10 @@ export default function SettingsPage() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex items-start gap-4 p-4 rounded-2xl transition-all duration-300 text-left border ${
-                  isActive
+                className={`flex items-start gap-4 p-4 rounded-2xl transition-all duration-300 text-left border ${isActive
                     ? "bg-gradient-to-br from-blue-600 to-indigo-600 text-white border-transparent shadow-lg shadow-blue-500/30 scale-100"
                     : "bg-white text-gray-700 border-gray-100 hover:border-blue-200 hover:shadow-md hover:scale-[1.02]"
-                }`}
+                  }`}
               >
                 <div className={`p-2 rounded-xl mt-1 shrink-0 ${isActive ? 'bg-white/20' : 'bg-blue-50 text-blue-600'}`}>
                   <Icon className="w-5 h-5" />
@@ -59,7 +61,7 @@ export default function SettingsPage() {
           <div className="bg-white/70 backdrop-blur-xl rounded-3xl shadow-xl shadow-gray-200/50 border border-white p-8 relative overflow-hidden transition-all duration-500">
             {/* Decorative background blur */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-50 -z-10 translate-x-1/2 -translate-y-1/2"></div>
-            
+
             <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
               {activeTab === "general" && (
                 <div className="space-y-8">
@@ -67,7 +69,7 @@ export default function SettingsPage() {
                     <h2 className="text-xl font-bold text-gray-900">Profile Information</h2>
                     <p className="text-sm text-gray-500 mt-1">Update your personal details here.</p>
                   </div>
-                  
+
                   <div className="flex items-center gap-6 pb-6 border-b border-gray-100">
                     <div className="relative group">
                       <div className="w-24 h-24 rounded-full bg-gradient-to-tr from-blue-100 to-indigo-100 p-1 shadow-md">
@@ -115,7 +117,7 @@ export default function SettingsPage() {
                     <h2 className="text-xl font-bold text-gray-900">Change Password</h2>
                     <p className="text-sm text-gray-500 mt-1">Ensure your account is using a long, random password.</p>
                   </div>
-                  
+
                   <div className="space-y-5 max-w-lg">
                     <div className="space-y-2 group">
                       <label className="text-sm font-semibold text-gray-700">Current Password</label>
@@ -148,7 +150,7 @@ export default function SettingsPage() {
                     <h2 className="text-xl font-bold text-gray-900">Notification Preferences</h2>
                     <p className="text-sm text-gray-500 mt-1">Choose what we can notify you about.</p>
                   </div>
-                  
+
                   <div className="space-y-4">
                     {[
                       { title: "Email Notifications", desc: "Receive system updates via email.", icon: Mail, checked: true },
@@ -174,14 +176,14 @@ export default function SettingsPage() {
                   </div>
                 </div>
               )}
-              
+
               {activeTab === "preferences" && (
                 <div className="space-y-8">
                   <div>
                     <h2 className="text-xl font-bold text-gray-900">System Preferences</h2>
                     <p className="text-sm text-gray-500 mt-1">Customize your workspace experience.</p>
                   </div>
-                  
+
                   <div className="space-y-6 max-w-lg">
                     <div className="space-y-2 group">
                       <label className="text-sm font-semibold text-gray-700">Language</label>
@@ -204,7 +206,7 @@ export default function SettingsPage() {
               )}
 
               <div className="mt-10 pt-6 border-t border-gray-100 flex justify-end">
-                <button 
+                <button
                   onClick={handleSave}
                   className={`bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-3 rounded-xl font-medium transition-all duration-300 flex items-center gap-2 shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 hover:-translate-y-0.5 ${isSaving ? 'opacity-90 cursor-wait' : 'cursor-pointer'}`}
                 >
