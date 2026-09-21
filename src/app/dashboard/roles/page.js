@@ -13,6 +13,10 @@ export default function RolesPermissionsPage() {
     { id: "support_manager", name: "Support Manager", icon: Headphones },
   ];
 
+
+
+
+
   const allPermissions = [
     { id: "manage_users", label: "Manage all users" },
     { id: "manage_doctors", label: "Manage doctors" },
@@ -49,11 +53,10 @@ export default function RolesPermissionsPage() {
                 <button
                   key={role.id}
                   onClick={() => setActiveRole(role.id)}
-                  className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors cursor-pointer ${
-                    isActive
+                  className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors cursor-pointer ${isActive
                       ? "bg-blue-50 text-blue-700"
                       : "text-gray-600 hover:bg-gray-100 hover:text-gray-900"
-                  }`}
+                    }`}
                 >
                   <Icon className={`w-5 h-5 ${isActive ? "text-blue-600" : "text-gray-400"}`} />
                   {role.name}
@@ -66,7 +69,7 @@ export default function RolesPermissionsPage() {
         {/* Right Content - Permissions */}
         <div className="w-2/3 p-8 flex flex-col">
           <h2 className="text-lg font-bold text-gray-800 mb-6">Permissions</h2>
-          
+
           <div className="flex-1 space-y-4">
             {allPermissions.map((perm) => (
               <div key={perm.id} className="flex items-center">
@@ -76,11 +79,10 @@ export default function RolesPermissionsPage() {
                   className="flex items-center gap-4 group cursor-pointer"
                 >
                   <div
-                    className={`w-5 h-5 rounded flex items-center justify-center transition-colors ${
-                      permissions[perm.id]
+                    className={`w-5 h-5 rounded flex items-center justify-center transition-colors ${permissions[perm.id]
                         ? "bg-blue-600 border border-blue-600"
                         : "bg-white border border-gray-300 group-hover:border-blue-400"
-                    }`}
+                      }`}
                   >
                     {permissions[perm.id] && <Check className="w-3.5 h-3.5 text-white" />}
                   </div>
