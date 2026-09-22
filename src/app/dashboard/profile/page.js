@@ -2,6 +2,11 @@
 
 import { User, Mail, Phone, MapPin, Shield, Calendar, Edit3, Camera } from "lucide-react";
 
+
+
+
+
+
 export default function AdminProfilePage() {
   return (
     <div className="p-6 max-w-6xl mx-auto min-h-screen">
@@ -22,7 +27,7 @@ export default function AdminProfilePage() {
           <div className="bg-white/70 backdrop-blur-xl rounded-3xl shadow-xl shadow-gray-200/50 border border-white p-8 relative overflow-hidden flex flex-col items-center text-center">
             {/* Decorative background */}
             <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-t-3xl -z-10"></div>
-            
+
             <div className="relative mt-8 mb-4 group cursor-pointer">
               <div className="w-32 h-32 rounded-full bg-white p-1.5 shadow-xl relative z-10">
                 <div className="w-full h-full rounded-full bg-blue-50 flex items-center justify-center overflow-hidden border-2 border-dashed border-blue-200">
@@ -59,64 +64,64 @@ export default function AdminProfilePage() {
         {/* Right Column - Details */}
         <div className="lg:col-span-2 space-y-8">
           <div className="bg-white/70 backdrop-blur-xl rounded-3xl shadow-xl shadow-gray-200/50 border border-white p-8 relative overflow-hidden">
-             <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-50 rounded-full mix-blend-multiply filter blur-3xl opacity-60 -z-10 translate-x-1/3 -translate-y-1/3"></div>
-             
-             <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-                <User className="w-5 h-5 text-indigo-500" /> 
-                Personal Information
-             </h3>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-50 rounded-full mix-blend-multiply filter blur-3xl opacity-60 -z-10 translate-x-1/3 -translate-y-1/3"></div>
 
-             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <p className="text-sm text-gray-500 mb-1">First Name</p>
-                  <p className="font-semibold text-gray-900">Super</p>
-                </div>
-                <div>
-                  <p className="text-sm text-gray-500 mb-1">Last Name</p>
-                  <p className="font-semibold text-gray-900">Admin</p>
-                </div>
-                <div>
-                  <p className="text-sm text-gray-500 mb-1">Date of Birth</p>
-                  <p className="font-semibold text-gray-900">January 1, 1990</p>
-                </div>
-                <div>
-                  <p className="text-sm text-gray-500 mb-1">Gender</p>
-                  <p className="font-semibold text-gray-900">Male</p>
-                </div>
-             </div>
+            <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+              <User className="w-5 h-5 text-indigo-500" />
+              Personal Information
+            </h3>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <p className="text-sm text-gray-500 mb-1">First Name</p>
+                <p className="font-semibold text-gray-900">Super</p>
+              </div>
+              <div>
+                <p className="text-sm text-gray-500 mb-1">Last Name</p>
+                <p className="font-semibold text-gray-900">Admin</p>
+              </div>
+              <div>
+                <p className="text-sm text-gray-500 mb-1">Date of Birth</p>
+                <p className="font-semibold text-gray-900">January 1, 1990</p>
+              </div>
+              <div>
+                <p className="text-sm text-gray-500 mb-1">Gender</p>
+                <p className="font-semibold text-gray-900">Male</p>
+              </div>
+            </div>
           </div>
 
           <div className="bg-white/70 backdrop-blur-xl rounded-3xl shadow-xl shadow-gray-200/50 border border-white p-8 relative overflow-hidden">
-             <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-50 rounded-full mix-blend-multiply filter blur-3xl opacity-60 -z-10 -translate-x-1/3 translate-y-1/3"></div>
-             
-             <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-                <Shield className="w-5 h-5 text-blue-500" /> 
-                Account Status
-             </h3>
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-50 rounded-full mix-blend-multiply filter blur-3xl opacity-60 -z-10 -translate-x-1/3 translate-y-1/3"></div>
 
-             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div className="p-4 rounded-2xl bg-blue-50 border border-blue-100 flex flex-col items-center justify-center text-center">
-                  <div className="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mb-3">
-                    <Shield className="w-5 h-5" />
-                  </div>
-                  <p className="text-sm text-blue-600/80 mb-1">Role</p>
-                  <p className="font-bold text-blue-900">Super Admin</p>
+            <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+              <Shield className="w-5 h-5 text-blue-500" />
+              Account Status
+            </h3>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="p-4 rounded-2xl bg-blue-50 border border-blue-100 flex flex-col items-center justify-center text-center">
+                <div className="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mb-3">
+                  <Shield className="w-5 h-5" />
                 </div>
-                <div className="p-4 rounded-2xl bg-green-50 border border-green-100 flex flex-col items-center justify-center text-center">
-                  <div className="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center mb-3">
-                    <div className="w-2.5 h-2.5 bg-green-500 rounded-full"></div>
-                  </div>
-                  <p className="text-sm text-green-600/80 mb-1">Status</p>
-                  <p className="font-bold text-green-900">Active</p>
+                <p className="text-sm text-blue-600/80 mb-1">Role</p>
+                <p className="font-bold text-blue-900">Super Admin</p>
+              </div>
+              <div className="p-4 rounded-2xl bg-green-50 border border-green-100 flex flex-col items-center justify-center text-center">
+                <div className="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center mb-3">
+                  <div className="w-2.5 h-2.5 bg-green-500 rounded-full"></div>
                 </div>
-                <div className="p-4 rounded-2xl bg-purple-50 border border-purple-100 flex flex-col items-center justify-center text-center">
-                  <div className="w-10 h-10 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center mb-3">
-                    <Calendar className="w-5 h-5" />
-                  </div>
-                  <p className="text-sm text-purple-600/80 mb-1">Joined</p>
-                  <p className="font-bold text-purple-900">Aug 2023</p>
+                <p className="text-sm text-green-600/80 mb-1">Status</p>
+                <p className="font-bold text-green-900">Active</p>
+              </div>
+              <div className="p-4 rounded-2xl bg-purple-50 border border-purple-100 flex flex-col items-center justify-center text-center">
+                <div className="w-10 h-10 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center mb-3">
+                  <Calendar className="w-5 h-5" />
                 </div>
-             </div>
+                <p className="text-sm text-purple-600/80 mb-1">Joined</p>
+                <p className="font-bold text-purple-900">Aug 2023</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
