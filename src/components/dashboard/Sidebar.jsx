@@ -1,7 +1,6 @@
 "use client";
 
 import {
-  HeartPulse,
   LayoutDashboard,
   Users,
   Stethoscope,
@@ -22,6 +21,7 @@ import {
   User,
   Bot
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -81,7 +81,7 @@ export default function Sidebar() {
     <aside className="w-64 bg-[#0c1e3a] text-white flex flex-col flex-shrink-0 h-full">
       {/* Logo */}
       <div className="px-6 py-5 flex items-center space-x-3 border-b border-[#163057]">
-        <HeartPulse className="w-8 h-8 text-[#1b64f2]" strokeWidth={2} />
+        <Image src="/logo.png" alt="HealthConnect Logo" width={32} height={32} className="w-8 h-8 object-contain" />
         <div>
           <p className="text-base font-bold tracking-wide leading-none">HealthConnect</p>
           <p className="text-xs text-gray-400 mt-0.5">Admin Panel</p>

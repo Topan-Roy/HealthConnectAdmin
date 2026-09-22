@@ -1,6 +1,7 @@
 "use client";
 
-import { Eye, HeartPulse } from "lucide-react";
+import { Eye } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -22,7 +23,7 @@ export default function LoginPage() {
         {/* Left Side - Branding */}
         <div className="hidden md:flex flex-col items-center justify-center w-1/2 bg-[#0c1e3a] p-12 text-white relative overflow-hidden">
           <div className="flex flex-col items-center z-10 space-y-4 text-center mt-10">
-            <HeartPulse className="w-16 h-16 text-white mb-2" strokeWidth={1.5} />
+            <Image src="/logo.png" alt="HealthConnect Logo" width={80} height={80} className="w-20 h-20 mb-2 object-contain" />
             <div>
               <h1 className="text-3xl font-bold tracking-wide">HealthConnect</h1>
               <p className="text-xs font-light text-gray-300 mt-2 tracking-widest uppercase">
@@ -30,10 +31,14 @@ export default function LoginPage() {
               </p>
             </div>
 
-            {/* Doctor Illustration Placeholder */}
-            <div className="mt-16 bg-[#163057] rounded-3xl p-8 flex items-center justify-center w-64 h-64 shadow-xl relative overflow-hidden">
-              <div className="absolute inset-0 bg-blue-400/10 backdrop-blur-sm"></div>
-              <p className="text-gray-400 text-sm z-10">[Doctor Illustration Image]</p>
+            {/* Doctor Illustration */}
+            <div className="mt-12 bg-[#163057] rounded-3xl shadow-xl relative overflow-hidden w-72 h-72 flex-shrink-0 border border-[#1b64f2]/20">
+              <Image 
+                src="/doctor_illustration.jpg" 
+                alt="Doctor Illustration" 
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
         </div>
